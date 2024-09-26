@@ -74,8 +74,6 @@ clusterctl-settings.json
 # test results
 _artifacts
 
-# release artifacts
-out
 
 # Helm
 .helm
