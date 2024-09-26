@@ -52,6 +52,12 @@ storage:
 func TestRender(t *testing.T) {
 	t.Parallel()
 
+	bootCommands := []string{
+		"pre-command",
+		"another-pre-command",
+		// Test multi-line commands as well.
+		"cat <<EOF > /etc/modules-load.d/containerd.conf\noverlay\nbr_netfilter\nEOF\n",
+	}
 	preKubeadmCommands := []string{
 		"pre-command",
 		"another-pre-command",
@@ -73,6 +79,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "renders valid Ignition JSON",
 			input: &cloudinit.BaseUserData{
+				BootCommands:        bootCommands,
 				PreKubeadmCommands:  preKubeadmCommands,
 				PostKubeadmCommands: postKubeadmCommands,
 				KubeadmCommand:      "kubeadm join",
@@ -269,6 +276,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "multiple users with password auth",
 			input: &cloudinit.BaseUserData{
+				BootCommands:        bootCommands,
 				PreKubeadmCommands:  preKubeadmCommands,
 				PostKubeadmCommands: postKubeadmCommands,
 				KubeadmCommand:      "kubeadm join",
@@ -351,6 +359,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "base64 encoded content",
 			input: &cloudinit.BaseUserData{
+				BootCommands:        bootCommands,
 				PreKubeadmCommands:  preKubeadmCommands,
 				PostKubeadmCommands: postKubeadmCommands,
 				KubeadmCommand:      "kubeadm join",
@@ -434,6 +443,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "all file ownership combinations",
 			input: &cloudinit.BaseUserData{
+				BootCommands:        bootCommands,
 				PreKubeadmCommands:  preKubeadmCommands,
 				PostKubeadmCommands: postKubeadmCommands,
 				KubeadmCommand:      "kubeadm join",

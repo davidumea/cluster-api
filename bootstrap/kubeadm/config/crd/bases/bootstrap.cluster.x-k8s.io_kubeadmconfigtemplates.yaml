@@ -878,6 +878,12 @@ spec:
                               type: string
                             type: array
                         type: object
+                      bootCommands:
+                        description: BootCommands specifies extra commands to run very early
+                          in the boot process
+                        items:
+                          type: string
+                        type: array
                       postKubeadmCommands:
                         description: PostKubeadmCommands specifies extra commands
                           to run after kubeadm runs
@@ -1836,6 +1842,12 @@ spec:
                               type: string
                             type: array
                         type: object
+                      bootCommands:
+                        description: BootCommands specifies extra commands to run very early
+                          in the boot process
+                        items:
+                          type: string
+                        type: array
                       postKubeadmCommands:
                         description: PostKubeadmCommands specifies extra commands
                           to run after kubeadm runs
@@ -3580,6 +3592,12 @@ spec:
                               type: string
                             type: array
                         type: object
+                      bootCommands:
+                        description: BootCommands specifies extra commands to run very early
+                          in the boot process
+                        items:
+                          type: string
+                        type: array
                       postKubeadmCommands:
                         description: PostKubeadmCommands specifies extra commands
                           to run after kubeadm runs

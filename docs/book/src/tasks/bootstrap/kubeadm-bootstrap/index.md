@@ -182,6 +182,14 @@ The `KubeadmConfig` object supports customizing the content of the config-data. 
         }
     ```
 
+- `KubeadmConfig.BootCommands` specifies a list of commands to be executed very early in the boot process
+
+    ```yaml
+    bootCommands:
+      - echo 192.168.1.130 us.archive.ubuntu.com >> /etc/hosts
+      - [ cloud-init-per, once, mymkfs, mkfs, /dev/vdb ]
+    ```
+
 - `KubeadmConfig.PreKubeadmCommands` specifies a list of commands to be executed before `kubeadm init/join`
 
     ```yaml

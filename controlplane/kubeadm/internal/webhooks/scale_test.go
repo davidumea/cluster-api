@@ -100,6 +100,9 @@ func TestKubeadmControlPlaneValidateScale(t *testing.T) {
 						Name: "kcp-managed-etcd",
 					},
 				},
+				BootCommands: []string{
+					"kcp-managed-etcd", "foo",
+				},
 				PreKubeadmCommands: []string{
 					"kcp-managed-etcd", "foo",
 				},

@@ -58,6 +58,10 @@ type KubeadmConfigSpec struct {
 	// +optional
 	Mounts []MountPoints `json:"mounts,omitempty"`
 
+	// BootCommands specifies extra commands to run before kubeadm runs
+	// +optional
+	BootCommands []string `json:"bootCommands,omitempty"`
+
 	// PreKubeadmCommands specifies extra commands to run before kubeadm runs
 	// +optional
 	PreKubeadmCommands []string `json:"preKubeadmCommands,omitempty"`
