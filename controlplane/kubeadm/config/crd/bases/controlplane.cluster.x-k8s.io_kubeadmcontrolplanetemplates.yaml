@@ -901,7 +901,10 @@ spec:
                             description: BootCommands specifies extra commands to run very early
                               in the boot process
                             items:
-                              type: string
+                              description: Defines each boot command to be executed
+                              items:
+                                type: string
+                              type: array
                             type: array
                           postKubeadmCommands:
                             description: PostKubeadmCommands specifies extra commands
@@ -2824,7 +2827,10 @@ spec:
                             description: BootCommands specifies extra commands to run very early
                               in the boot process
                             items:
-                              type: string
+                              description: Defines each boot command to be executed
+                              items:
+                                type: string
+                              type: array
                             type: array
                           postKubeadmCommands:
                             description: PostKubeadmCommands specifies extra commands
