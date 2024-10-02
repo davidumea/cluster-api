@@ -77,7 +77,7 @@ type KubeadmConfigSpec struct {
 
 	// BootCommands specifies extra commands to run very early in the boot process
 	// +optional
-	BootCommands []string `json:"BootCommands,omitempty"`
+	BootCommands []string `json:"bootCommands,omitempty"`
 
 	// PreKubeadmCommands specifies extra commands to run before kubeadm runs
 	// +optional
