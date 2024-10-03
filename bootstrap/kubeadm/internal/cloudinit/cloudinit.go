@@ -84,6 +84,10 @@ func generate(kind string, tpl string, data interface{}) ([]byte, error) {
 		return nil, errors.Wrap(err, "failed to parse files template")
 	}
 
+	if _, err := tm.Parse(bootCommandsTemplate); err != nil {
+		return nil, errors.Wrap(err, "failed to parse boot commands template")
+	}
+
 	if _, err := tm.Parse(commandsTemplate); err != nil {
 		return nil, errors.Wrap(err, "failed to parse commands template")
 	}
