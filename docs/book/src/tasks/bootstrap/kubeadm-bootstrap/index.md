@@ -186,7 +186,6 @@ The `KubeadmConfig` object supports customizing the content of the config-data. 
 
     ```yaml
     bootCommands:
-      - echo 192.168.1.130 us.archive.ubuntu.com >> /etc/hosts
       - [ cloud-init-per, once, mymkfs, mkfs, /dev/vdb ]
     ```
 

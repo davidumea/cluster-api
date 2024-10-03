@@ -45,7 +45,7 @@ const (
 // BaseUserData is shared across all the various types of files written to disk.
 type BaseUserData struct {
 	Header               string
-	BootCommands         []string
+	BootCommands         []bootstrapv1.MountPoints
 	PreKubeadmCommands   []string
 	PostKubeadmCommands  []string
 	AdditionalFiles      []bootstrapv1.File
