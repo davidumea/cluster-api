@@ -34,7 +34,6 @@ const (
     owner: root:root
     permissions: '0640'
     content: "This placeholder file is used to create the /run/cluster-api sub directory in a way that is compatible with both Linux and Windows (mkdir -p /run/cluster-api does not work with Windows)"
-bootcmd:
 {{- template "boot_commands" .BootCommands }}
 runcmd:
 {{- template "commands" .PreKubeadmCommands }}
@@ -46,7 +45,7 @@ runcmd:
 {{- template "fs_setup" .DiskSetup}}
 {{- template "mounts" .Mounts}}
 `
-) //TODO: make `bootcmd` conditional
+)
 
 // ControlPlaneJoinInput defines context to generate controlplane instance user data for control plane node join.
 type ControlPlaneJoinInput struct {
