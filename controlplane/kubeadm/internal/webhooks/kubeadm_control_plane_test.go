@@ -396,7 +396,7 @@ func TestKubeadmControlPlaneValidateUpdate(t *testing.T) {
 
 	validUpdate := before.DeepCopy()
 	validUpdate.Labels = map[string]string{"blue": "green"}
-	validUpdate.Spec.KubeadmConfigSpec.BootCommands = []bootstrapv1.MountPoints{
+	validUpdate.Spec.KubeadmConfigSpec.BootCommands = []bootstrapv1.BootCommand{
 		{"ab", "abc"},
 	}
 	validUpdate.Spec.KubeadmConfigSpec.PreKubeadmCommands = []string{"ab", "abc"}

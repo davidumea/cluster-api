@@ -72,7 +72,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "renders valid Ignition JSON",
 			input: &cloudinit.BaseUserData{
-				BootCommands: []bootstrapv1.MountPoints{
+				BootCommands: []bootstrapv1.BootCommand{
 					{
 						"boot-command", "another-boot-command",
 					},
@@ -273,7 +273,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "multiple users with password auth",
 			input: &cloudinit.BaseUserData{
-				BootCommands: []bootstrapv1.MountPoints{
+				BootCommands: []bootstrapv1.BootCommand{
 					{
 						"boot-command", "another-boot-command",
 					},
@@ -360,7 +360,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "base64 encoded content",
 			input: &cloudinit.BaseUserData{
-				BootCommands: []bootstrapv1.MountPoints{
+				BootCommands: []bootstrapv1.BootCommand{
 					{
 						"boot-command", "another-boot-command",
 					},
@@ -448,7 +448,7 @@ func TestRender(t *testing.T) {
 		{
 			desc: "all file ownership combinations",
 			input: &cloudinit.BaseUserData{
-				BootCommands: []bootstrapv1.MountPoints{
+				BootCommands: []bootstrapv1.BootCommand{
 					{
 						"boot-command", "another-boot-command",
 					},
