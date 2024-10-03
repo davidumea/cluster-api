@@ -19,7 +19,7 @@ package cloudinit
 const (
 	bootCommandsTemplate = `{{ define "boot_commands" -}}
 {{- if . }}
-mounts:{{ range . }}
+bootcmd:{{ range . }}
   - {{ range . }}- {{ . }}
     {{ end -}}
 {{- end -}}
