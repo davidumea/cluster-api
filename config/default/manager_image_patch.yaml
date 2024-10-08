@@ -7,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-      - image: gcr.io/k8s-staging-cluster-api/cluster-api-controller:main
+      - image: harbor.david-elastx.dev-ck8s.com/capi/cluster-api-controller-amd64:dev
         name: manager
